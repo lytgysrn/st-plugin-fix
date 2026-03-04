@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         数据库-可定制副本
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      4.6
 // @description  为不同的角色卡提供独立的、使用不同默认模板的数据库。通过修改 @name 和 UNIQUE_SCRIPT_ID 来创建互不干扰的副本。
 // @author       Cline (AI Assisted)
 // @match        */*
@@ -54,7 +54,7 @@
   // !!! 请将下面的 'biaozhunbanv2_v1' 更改为一个【全新的、唯一的】英文名称。
   // !!! 例如: 'my_sci_fi_db', 'fantasy_world_db' 等。
   // !!! 同时，请务必修改上面的 @name 以便在菜单中区分它们。
-  const UNIQUE_SCRIPT_ID = 'shujuku_v104'; // <--- 为每个副本修改这里
+  const UNIQUE_SCRIPT_ID = 'shujukupv2'; // <--- 为每个副本修改这里
   const SCRIPT_ID_PREFIX_ACU = UNIQUE_SCRIPT_ID;
 
   const POPUP_ID_ACU = `${SCRIPT_ID_PREFIX_ACU}-popup`;
@@ -21792,4 +21792,5 @@ async function callCustomOpenAI_ACU(dynamicContent, abortController = null, opti
       }
   }
 })();
+
 
