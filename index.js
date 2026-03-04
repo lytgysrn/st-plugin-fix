@@ -13,7 +13,6 @@
 (function () {
   'use strict';
   console.log('ACU_SCRIPT_DEBUG: AutoCardUpdater script execution started.'); // Very first log
-  alert('shujuku fix loaded: ' + new Date().toISOString());
   // --- 安全存储 & 顶层窗口 ---
   const topLevelWindow_ACU = (typeof window.parent !== 'undefined' ? window.parent : window);
 
@@ -21791,6 +21790,7 @@ async function callCustomOpenAI_ACU(dynamicContent, abortController = null, opti
       }
   }
 })();
+
 
 
 
