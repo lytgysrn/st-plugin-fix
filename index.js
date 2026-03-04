@@ -16512,15 +16512,14 @@ insertRow(1, ["时间2", "大纲事件2...", "关键词"]);
     
 // 放在 messagesText += messages.map(...) 之前，或至少放在 map 回调能访问到的位置
 function stripHiddenBlocks_ACU(s) {
-    if (!s) return s;
-    return String(s)
-        // 1) HTML 注释（你的自我提醒）
-        .replace(/<!--[\s\S]*?-->/g, '')
-        // 2) 变量块（如果你也把变量写在正文里，建议一起剥离）
-        .replace(/<UpdateVariable>[\s\S]*?<\/UpdateVariable>/gi, '')
-        // 3) 其它你可能用过的隐藏容器（可选）
-        .replace(^[\s\S]*?### 正文, '')
-        .replace(<StatusPlaceHolderImpl/>, '');
+  if (s == null) return s;
+  return String(s)
+    // 1) HTML 注释：<!-- ... -->
+    .replace(/<!--[\s\S]*?-->/g, "")
+    // 2) UpdateVariable 块（可选）
+    .replace(/<UpdateVariable>[\s\S]*?<\/UpdateVariable>/gi, "")
+    // 3) Hidden 块（可选）
+    .replace(/<Hidden>[\s\S]*?<\/Hidden>/gi, "");
 }
 
 // 2. Format the messages for $1
@@ -21792,6 +21791,7 @@ async function callCustomOpenAI_ACU(dynamicContent, abortController = null, opti
       }
   }
 })();
+
 
 
 
